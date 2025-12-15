@@ -1,0 +1,26 @@
+id,employee_name,department,role,location,performance_score,experience_years,employment_type,project,manager
+1,Amit Sharma,Finance,Analyst,Delhi,82,3,Full-Time,Budget Forecasting,Priya Mehta
+2,Priya Mehta,HR,Manager,Mumbai,90,9,Full-Time,Talent Transformation,Anil Kapoor
+3,Rahul Verma,IT,Engineer,Bangalore,78,4,Full-Time,Cloud Migration,Suresh Nair
+4,Neha Gupta,Operations,Senior Analyst,Gurgaon,85,6,Full-Time,Process Optimization,Sunita Rao
+5,Arjun Patel,Finance,Consultant,Ahmedabad,74,5,Contract,Cost Reduction,Amit Sharma
+6,Kavita Joshi,HR,Analyst,Pune,81,3,Full-Time,Engagement Survey,Priya Mehta
+7,Rohit Malhotra,IT,Lead Engineer,Noida,88,8,Full-Time,AI Enablement,Rahul Verma
+8,Sneha Iyer,Analytics,Data Scientist,Bangalore,91,7,Full-Time,Churn Prediction,Manoj Kulkarni
+9,Manoj Kulkarni,Analytics,Senior Manager,Pune,93,12,Full-Time,Advanced Analytics,Anil Kapoor
+10,Anil Kapoor,Leadership,Director,Mumbai,96,18,Full-Time,Enterprise Strategy,Board
+11,Pooja Singh,Operations,Process Lead,Jaipur,84,6,Full-Time,SLA Improvement,Neha Gupta
+12,Sachin Rane,IT,DevOps Engineer,Pune,79,4,Full-Time,CI/CD Automation,Rohit Malhotra
+13,Divya Nair,Compliance,Risk Analyst,Kochi,87,7,Full-Time,Regulatory Audit,Sunita Rao
+14,Sunita Rao,Compliance,Compliance Head,Hyderabad,94,15,Full-Time,Policy Governance,Anil Kapoor
+15,Vikram Choudhary,Finance,Senior Analyst,Indore,83,6,Full-Time,Revenue Assurance,Amit Sharma
+16,Meenal Shah,HR,Business Partner,Ahmedabad,89,10,Full-Time,Workforce Planning,Priya Mehta
+17,Karan Bansal,IT,Software Engineer,Chandigarh,76,2,Full-Time,Internal Tools,Rahul Verma
+18,Ritu Aggarwal,Operations,Quality Analyst,Faridabad,80,4,Full-Time,Quality Audit,Neha Gupta
+19,Alok Mishra,Analytics,BI Developer,Lucknow,82,5,Full-Time,Dashboard Modernization,Manoj Kulkarni
+20,Shweta Kulkarni,HR,L&D Specialist,Nagpur,88,8,Full-Time,Digital Upskilling,Meenal Shah
+21,Nikhil Arora,Finance,FP&A Manager,Gurgaon,92,11,Full-Time,Financial Planning,Priya Mehta
+22,Tanya Kapoor,Compliance,Audit Manager,Delhi,90,12,Full-Time,Internal Controls,Sunita Rao
+23,Harsh Jain,IT,Security Analyst,Bangalore,86,6,Full-Time,Data Protection,Rohit Malhotra
+24,Deepak Yadav,Operations,Shift Manager,Kanpur,77,5,Full-Time,Resource Scheduling,Neha Gupta
+25,Anita Roy,Finance,Finance Manager,Kolkata,91,13,Full-Time,Profitability Analysis,Anil Kapoor

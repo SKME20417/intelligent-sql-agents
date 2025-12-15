@@ -1,0 +1,6 @@
+id,employee_name,department,role,location,performance_score,experience_years,employment_type,project,manager
+101,Sample Employee 1,Finance,Analyst,Delhi,80,3,Full-Time,Sample Project A,Sample Manager
+102,Sample Employee 2,IT,Engineer,Bangalore,78,4,Full-Time,Sample Project B,Sample Manager
+103,Sample Employee 3,HR,Manager,Mumbai,85,7,Full-Time,Sample Project C,Sample Manager
+104,Sample Employee 4,Analytics,Data Scientist,Pune,88,6,Full-Time,Sample Project D,Sample Manager
+105,Sample Employee 5,Operations,Process Analyst,Gurgaon,82,5,Contract,Sample Project E,Sample Manager
