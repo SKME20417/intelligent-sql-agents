@@ -3,13 +3,21 @@ import { generateSQL } from "../utils/nlToSqlEngine";
 export default function NLQueryInput({ onGenerate }: any) {
   return (
     <div className="panel">
-      <textarea id="nlq" placeholder="Ask in plain English..." />
+      <h3>Ask Your Question (Plain English)</h3>
+      <textarea
+        id="nlq"
+        placeholder="Example: Show top 10 employees from Finance department with highest performance score"
+      />
       <button
         onClick={() =>
-          onGenerate(generateSQL((document.getElementById("nlq") as HTMLTextAreaElement).value))
+          onGenerate(
+            generateSQL(
+              (document.getElementById("nlq") as HTMLTextAreaElement).value
+            )
+          )
         }
       >
-        Generate SQL
+        Generate SQL Query
       </button>
     </div>
   );

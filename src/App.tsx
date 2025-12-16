@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import RoleSelector from "./components/RoleSelector";
 import DataLoader from "./components/DataLoader";
+import DataPreview from "./components/DataPreview";
 import SchemaViewer from "./components/SchemaViewer";
 import NLQueryInput from "./components/NLQueryInput";
 import GeneratedSQLPanel from "./components/GeneratedSQLPanel";
@@ -17,31 +18,67 @@ export default function App() {
   const [sql, setSql] = useState("");
   const [results, setResults] = useState<any[]>([]);
   const [logs, setLogs] = useState<string[]>([]);
+  const [executionStatus, setExecutionStatus] = useState("");
+
+  const executeSQL = (finalSQL: string) => {
+    const rbacCheck = enforceRBAC(role, finalSQL);
+    const validation = validateQuery(finalSQL);
+
+    setLogs((prev) =>
+      [
+        ...prev,
+        `User Role: ${role}`,
+        `Executed SQL: ${finalSQL}`,
+        rbacCheck,
+        validation
+      ].filter(Boolean)
+    );
+
+    if (rbacCheck || validation) {
+      setExecutionStatus("Execution blocked due to policy violation.");
+      setResults([]);
+      return;
+    }
+
+    let executedResults = [...data];
+
+    const limitMatch = finalSQL.match(/limit\s+(\d+)/i);
+    if (limitMatch) {
+      executedResults = executedResults.slice(0, Number(limitMatch[1]));
+    } else {
+      executedResults = executedResults.slice(0, 10);
+    }
+
+    setResults(executedResults);
+    setExecutionStatus(
+      `Query executed successfully. Rows returned: ${executedResults.length}`
+    );
+  };
 
   return (
     <>
       <Header />
       <RoleSelector role={role} setRole={setRole} />
       <DataLoader setData={setData} />
+
+      {/* ✅ NEW DATA PREVIEW */}
+      <DataPreview data={data} />
+
       <SchemaViewer data={data} />
 
       <NLQueryInput
-        onGenerate={(generatedSQL) => {
-          const rbacCheck = enforceRBAC(role, generatedSQL);
-          const validation = validateQuery(generatedSQL);
-
+        onGenerate={(generatedSQL: string) => {
           setSql(generatedSQL);
-          setLogs((l) => [...l, rbacCheck, validation].filter(Boolean) as string[]);
-
-          if (!rbacCheck && !validation) {
-            setResults(data.slice(0, 10));
-          }
+          setExecutionStatus("");
         }}
       />
 
-      <GeneratedSQLPanel sql={sql} />
-      <ValidationPanel sql={sql} role={role} />
+      <GeneratedSQLPanel sql={sql} onExecute={executeSQL} />
+
+      <ValidationPanel status={executionStatus} role={role} />
+
       <QueryResultTable results={results} />
+
       <AuditLogPanel logs={logs} />
     </>
   );
