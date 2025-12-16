@@ -1,4 +1,4 @@
-import Papa from "papaparse";
+import * as Papa from "papaparse";
 
 export default function DataLoader({ setData }: any) {
   const loadSample = async () => {
@@ -11,7 +11,7 @@ export default function DataLoader({ setData }: any) {
         skipEmptyLines: true
       });
 
-      setData(parsed.data);
+      setData(parsed.data as any[]);
     } catch (error) {
       alert("Failed to load sample data");
     }
@@ -25,7 +25,7 @@ export default function DataLoader({ setData }: any) {
       header: true,
       skipEmptyLines: true,
       complete: (results) => {
-        setData(results.data);
+        setData(results.data as any[]);
       }
     });
   };
